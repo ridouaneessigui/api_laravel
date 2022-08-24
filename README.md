@@ -62,3 +62,124 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+## BD
+
+``` SQL
+CREATE DATABASE IF NOT EXISTS apiNumerus21;
+USE apiNumerus21;
+```
+
+<BR>
+
+# Tables
+
+<BR>
+
+### Table User
+
+``` SQL
+CREATE TABLE users(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    prenom VARCHAR(255),
+    nom VARCHAR(255),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255),
+    sexe ENUM('HOMME', 'FEMME') DEFAULT 'HOMME',
+    datenaissance DATE,
+    statumatrimonial VARCHAR(255),
+    nombreenfant INT,
+    nationalite VARCHAR(255),
+    identite VARCHAR(255),
+    rue VARCHAR(255),
+    codep VARCHAR(255),
+    ville VARCHAR(255),
+    pays VARCHAR(255),
+    telp VARCHAR(255),
+    telf VARCHAR(255),
+    emailperso VARCHAR(255),
+    contacturgence VARCHAR(255),
+    fonction VARCHAR(255),
+    typecontrat VARCHAR(255),
+    dateentree DATE,
+    datesortie DATE,
+    banque VARCHAR(255),
+    iban VARCHAR(255),
+    rib VARCHAR(255),
+    securitesocial VARCHAR(255),
+    matricule VARCHAR(255),
+    role ENUM('SA', 'A','TE','C','CA','BE') DEFAULT 'TE'
+)
+
+```
+
+### Table PROJET
+
+``` SQL
+CREATE TABLE projets(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255),
+    client VARCHAR(255),
+    activite VARCHAR(255),
+    objectif VARCHAR(255),
+    percentage float,
+    commentaire VARCHAR(255),
+    date DATE,
+    eq VARCHAR(255),
+    categ1 VARCHAR(255),
+    categ2 VARCHAR(255),
+    )
+```
+
+### Table ABSENCE
+
+``` SQL
+CREATE TABLE absences(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    debut DATE,
+    fin DATE,
+    du VARCHAR(255),
+    au VARCHAR(255),
+    statut VARCHAR(255),
+    type VARCHAR(255),
+    justificatif BLOB,
+    commentaire VARCHAR(255)
+    )
+```
+
+### Table NOTE
+
+``` SQL
+CREATE TABLE notes(
+    id INT PRIMARY KEY AUTO_INCREMENT default NOT NULL,
+    prenom VARCHAR(255),
+    nom VARCHAR(255),
+    periode VARCHAR(255),
+    date DATE,
+    nomf VARCHAR(255),
+    carburant FLOAT,
+    transport FLOAT,
+    hotel FLOAT,
+    fourniture FLOAT,
+    entretien FLOAT,
+    divers FLOAT,
+    montant FLOAT,
+    tva FLOAT,
+    montantttc FLOAT,
+    avancer FLOAT,
+    notef VARCHAR(255),
+    datevirement DATE
+    )
+```
+
+### Table DOCUMENT
+
+``` SQL
+CREATE TABLE documents(
+    id INT PRIMARY KEY AUTO_INCREMENT default NOT NULL,
+    name VARCHAR(255),
+    path VARCHAR(255)
+    )
+```
