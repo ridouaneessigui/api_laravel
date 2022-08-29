@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\NotesController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ClientController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,12 +27,14 @@ Route::post('register',[UserController::class,'register']);
 Route::post('login',[UserController::class,'login']);
 Route::get('list',[UserController::class,'list']);
 
+
 Route::post('addprojet',[ProjetController::class,'addprojet']);
 Route::post('listp',[ProjetController::class,'listp']);
 Route::delete('delete/{id}',[ProjetController::class,'delete']);
 Route::get('projet/{id}',[ProjetController::class,'getProjet']);
 Route::get('searchp/{Key}',[ProjetController::class,'searchp']);
 Route::put('updateProjet/{id}',[ProjetController::class,'updateProjet']);
+
 
 Route::post('ajouabsence',[AbsenceController::class,'ajouabsence']);
 Route::post('lista',[AbsenceController::class,'lista']);
