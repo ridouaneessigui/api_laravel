@@ -16,6 +16,7 @@ class UserController extends Controller
         $user->email=$req->input('email');
         $user->pass=Hash::make($req->input('pass'));
         $user->sexe=$req->input('sexe');
+        
         $user->date_naissance=$req->input('date_naissance');
         $user->statu_matrimonial=$req->input('statu_matrimonial');
         $user->nombre_enfant=$req->input('nombre_enfant');

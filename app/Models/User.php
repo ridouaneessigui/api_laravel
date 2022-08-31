@@ -23,7 +23,7 @@ class User extends Authenticatable
         'email',
         'pass',
         'sexe',
-        'date_naissance',
+        'date_naissance'=> 'date:d/m/Y',
         'statu_matrimonial',
         'nombre_enfant',
         'nationalite',
